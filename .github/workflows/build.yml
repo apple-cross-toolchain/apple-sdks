@@ -19,6 +19,7 @@ jobs:
           tag_name: ${{ github.ref }}
           release_name: ${{ github.ref }}
   package_sdks:
+    needs: create_release
     runs-on: macos-10.15
     strategy:
       matrix:
