@@ -47,3 +47,4 @@ fi
 XCODE_VERSION="$(/usr/libexec/PlistBuddy -c 'Print :CFBundleShortVersionString' "$PROJECT_ROOT/Xcode.app/Contents/version.plist")"
 
 tar -Jcf "apple-sdks-xcode-$XCODE_VERSION.tar.xz" Xcode.app
+zstd --fast=7 -r Xcode.app -o "apple-sdks-xcode-$XCODE_VERSION.zstd"
