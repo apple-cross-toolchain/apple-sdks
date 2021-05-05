@@ -44,6 +44,9 @@ if [[ -d "$DEVELOPER_DIR/./Toolchains/XcodeDefault.xctoolchain/usr/lib/swift-5.0
   rsync -a --relative "$DEVELOPER_DIR/./Toolchains/XcodeDefault.xctoolchain/usr/lib/swift-5.0/" "$NEW_DEVELOPER_DIR"
 fi
 
+# Create a placeholder bin directory
+mkdir -p "$NEW_DEVELOPER_DIR/Toolchains/XcodeDefault.xctoolchain/usr/bin"
+
 XCODE_VERSION="$(/usr/libexec/PlistBuddy -c 'Print :CFBundleShortVersionString' "$PROJECT_ROOT/Xcode.app/Contents/version.plist")"
 
 tar -Jcf "apple-sdks-xcode-$XCODE_VERSION.tar.xz" Xcode.app
